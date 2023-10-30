@@ -1,0 +1,92 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // C Program to print the elements of a
+// Two-Dimensional array
+
+	int x[8][8] = { { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 }, { 0,1,1,1,0,0,0,0 } };
+    int h[8] = {40,32,25,35,19,17,0,10}
+	int o[2][8]; 
+    int c[8];
+    int ch[8];
+    int hn;
+    for(i=0;i<8;i++){
+        c[i]=0;
+        o[0][i]=0;
+        o[1][j]=0;
+    }
+    k=0;
+    o[0][0]=1;
+    o[1][0]=40;
+    int p=0;
+    int m;
+    if (o[1][0]==0){
+        for(i=0;i<8;i++){
+             printf("%d\n", c[i]);
+        }
+    }else{
+       #closedlistappendopen
+        c[m]=o[0][0];
+        m++;
+        #deleteopenfirstnode
+        ...
+        
+        
+        
+        
+        #puttingthechildren
+        for(j=0;j<8;j++){
+            for(i=0;i<8;i++){
+                if(x[j][i]==1){
+                    ch[k]=i+1;
+                    k++;
+                }
+                k=0;
+            }
+        #deleteifchildrenpresentfromopenandclosedlist 
+        for(j=0;j<8;j++){
+            for(i=0;i<8;i++){    
+            if(ch[j]==o[0][i]){
+               #call_delete_the_particular_element 
+            }
+            
+            if(ch[j]==c[i]){
+                call_delete_the_particular_element 
+            }
+            }
+        }
+        #appendchildreninopenlist
+       for(j=0;j<8;j++){
+            if(ch[i]!=0){
+                o[0][p]=ch[j];
+                hn=o[0][p]-1;
+                o[1][p]=h[hn];
+                p++;
+            }
+       }
+      #sortingofopen
+      for (i = 0; i < n; ++i){
+      for (j = i + 1; j < n; ++j){
+         if (o[1][i] > o[1][j]){
+            a = o[1][i];
+            o[1][i] = o[1][j];
+            o[1][j] = a;
+            a = o[0][i];
+            o[0][i] = o[0][j];
+            o[0][j] = a;
+         }
+      }
+   }
+
+           
+        
+        
+        
+        
+        
+        }
+    }
+
+    return 0;
+}

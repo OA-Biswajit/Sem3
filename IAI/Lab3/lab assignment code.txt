@@ -1,0 +1,140 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int arr[7][7]={{0,1,1,1,0,0,0},
+    {0,0,0,0,1,0,0},
+    {0,0,0,0,1,1,0},
+    {0,0,0,0,0,1,0},
+    {0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,1},
+    {0,0,0,0,0,0,0}
+    };
+    
+    int x=0;
+    vector<int>open;
+    vector<int>close;
+    int arr1[8]={40,32,25,35,19,17,0,10};
+    close.push_back(arr1[0]);
+    for(int i=0;i<7;i=x)
+    {
+        for(int j=0;j<7;j++)
+        {
+            if(arr[i][j]==1)
+            {
+                open.push_back(arr1[j]);
+            }
+        }
+        sort(open.begin(),open.end());
+        if(open[0]==arr1[6])
+        {
+            break;
+        }
+        x=find(arr1,arr1+8,open[0])-arr1;
+        close.push_back(open[0]);
+        open.erase(open.begin());
+    }
+    for(auto v:open)
+    {
+        cout<<v<<" ";
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int arr[7][7]={{0,1,1,1,0,0,0},
+    {0,0,0,0,1,0,0},
+    {0,0,0,0,1,1,0},
+    {0,0,0,0,0,1,0},
+    {0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,1},
+    {0,0,0,0,0,0,0}
+    };
+    
+    int path[7][8]={{0,11,14,7,0,0,0,0},
+    {0,0,0,0,15,0,0,0},
+    {0,0,0,18,8,10,0,0},
+    {0,0,0,0,0,25,0,0},
+    {0,0,0,0,0,0,0,9},
+    {0,0,0,0,0,0,20,0},
+    {0,0,0,0,0,0,0,10}};
+    int x=0;
+    vector<string>open;
+    vector<string>close;
+    vector<int>temp;
+    vector<int>temp2;
+    string arrstr[8]={"A","B","C","D","E","F","G","H"};
+    int arr1[8]={40,32,25,35,19,17,0,10};
+    close.push_back(arrstr[0]);
+    int sum=0;
+    for(int i=0;i<7;i=x)
+    {
+        
+        for(int j=0;j<7;j++)
+        {
+            if(arr[i][j]==1)
+            {
+                temp.push_back(arr1[j]);
+            }
+        }
+        sort(temp.begin(),temp.end());
+        x=find(arr1,arr1+8,temp[0])-arr1;
+        sum+=path[i][x];
+        if(temp[0]==arr1[6])
+        {
+            break;
+        }
+        temp2.push_back(temp[0]);
+        temp.erase(temp.begin());
+    }
+    for(int i=0;i<temp.size();i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                if(temp[i]==arr1[j])
+                {
+                    open.push_back(arrstr[j]);
+                    break;
+                }
+            }
+        }
+      for(int i=0;i<temp2.size();i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                if(temp2[i]==arr1[j])
+                {
+                    close.push_back(arrstr[j]);
+                    break;
+                }
+            }
+        } 
+        cout<<"open"<<endl;
+    for(auto v:open)
+    {
+        cout<<v<<" ";
+    }
+    cout<<endl;
+    cout<<"close"<<endl;
+    for(auto v:close)
+    {
+        cout<<v<<" ";
+    }
+     cout<<endl;
+    cout<<"cost of path is:";
+    cout<<sum;
+    return 0;
+}
+
